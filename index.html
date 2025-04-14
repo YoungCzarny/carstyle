@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Damian Kokott - Profesjonalne usługi car wrappingu, zmiany koloru auta, dechromingu, oklejania reklamowego, korekty lakieru, detailingu i montażu dokładek. Certyfikat Wrapster.">
+    <title>Damian Kokott - Car Wrapping & Detailing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Header (Struktura z Flexbox: Języki, Logo+Napis, Nav+Burger) -->
+    <header id="dynamic-header" class="page-header">
+        <div class="container header-container">
+
+            <!-- Lewa strona: Przyciski Języków -->
+            <div class="language-switcher-container">
+                <div class="language-switcher"><!-- JS Doda Przyciski --></div>
+            </div>
+
+            <!-- Środkowa część: Logo + Napis (tylko w stanie normalnym) -->
+            <!-- Logo będzie pozycjonowane absolutnie na środku w stanie shrunk przez CSS -->
+            <div class="logo-container"> <!-- Dodano kontener dla lepszego zarządzania flex -->
+                <div class="logo" onclick="scrollToTop()" role="button" tabindex="0" title="Przejdź do góry strony">
+                    <img src="logo.png" alt="Logo firmy Damian Kokott" data-translate-alt="logoAlt">
+                    <span class="logo-text">Car Style</span>
+                </div>
+            </div>
+
+            <!-- Prawa strona: Nawigacja Desktop + Hamburger -->
+            <div class="header-right-content">
+                 <div class="nav-wrapper"> <!-- Ten wrapper jest potrzebny, aby trzymać nav i burger razem -->
+                    <!-- Nawigacja Desktop -->
+                    <nav id="main-nav" class="main-nav-desktop">
+                         <ul>
+                            <li><a href="#hero" data-translate="home" data-section="hero">Strona Główna</a></li>
+                            <li class="nav-item-dropdown">
+                                <a href="#uslugi" data-translate="services" data-section="uslugi" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="desktop-submenu">Usługi</a>
+                                <ul class="dropdown-menu" id="desktop-submenu">
+                                    <li><a href="#service-paint-correction" data-translate="svcPaintCorrectionTitle">Korekta lakieru</a></li>
+                                    <li><a href="#service-full-wrap" data-translate="svcFullWrapTitle">Full Wrap</a></li>
+                                    <li><a href="#service-dechroming" data-translate="svcDechromingTitle">Dechroming</a></li>
+                                    <li><a href="#service-stripes-roof" data-translate="svcStripesRoofTitle">Pasy / Oklejanie dachów</a></li>
+                                    <li><a href="#service-interior-detailing" data-translate="svcIntDetailingTitle">Detailing wnętrza</a></li>
+                                    <li><a href="#service-headlight-restoration" data-translate="svcHeadlightRestoTitle">Regeneracja kloszy</a></li>
+                                    <li><a href="#service-lamp-tinting" data-translate="svcLampTintingTitle">Przyciemnianie lamp</a></li>
+                                    <li><a href="#service-maxton-fitting" data-translate="svcMaxtonFittingTitle">Montaż dokładek</a></li>
+                                    <li><a href="#service-ppf" data-translate="servicePpfTitle">Folie PPF <span class="soon-badge-inline" data-translate="soon">(Wkrótce)</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#portfolio" data-translate="portfolio" data-section="portfolio">Portfolio</a></li>
+                            <li><a href="#cennik" data-translate="pricing" data-section="cennik">Cennik</a></li>
+                            <li><a href="#kontakt" data-translate="contact" data-section="kontakt">Kontakt</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Przycisk Hamburger -->
+                    <button class="hamburger-menu" id="hamburger-button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav-mobile" data-translate-aria-label="openMenu">
+                        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- Nawigacja Mobilna (bez zmian strukturalnych) -->
+        <nav id="main-nav-mobile" class="main-nav-mobile" aria-hidden="true">
+             <ul>
+                <li><a href="#hero" data-translate="home" data-section="hero">Strona Główna</a></li>
+                <li class="nav-item-dropdown">
+                     <a href="#uslugi" data-translate="services" class="dropdown-toggle-mobile" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-submenu">Usługi</a>
+                     <ul class="dropdown-menu-mobile" id="mobile-submenu">
+                        <li><a href="#service-paint-correction" data-translate="svcPaintCorrectionTitle">Korekta lakieru</a></li>
+                        <li><a href="#service-full-wrap" data-translate="svcFullWrapTitle">Full Wrap</a></li>
+                        <li><a href="#service-dechroming" data-translate="svcDechromingTitle">Dechroming</a></li>
+                        <li><a href="#service-stripes-roof" data-translate="svcStripesRoofTitle">Pasy / Oklejanie dachów</a></li>
+                        <li><a href="#service-interior-detailing" data-translate="svcIntDetailingTitle">Detailing wnętrza</a></li>
+                        <li><a href="#service-headlight-restoration" data-translate="svcHeadlightRestoTitle">Regeneracja kloszy</a></li>
+                        <li><a href="#service-lamp-tinting" data-translate="svcLampTintingTitle">Przyciemnianie lamp</a></li>
+                        <li><a href="#service-maxton-fitting" data-translate="svcMaxtonFittingTitle">Montaż dokładek</a></li>
+                        <li><a href="#service-ppf" data-translate="servicePpfTitle">Folie PPF <span class="soon-badge-inline" data-translate="soon">(Wkrótce)</span></a></li>
+                     </ul>
+                </li>
+                <li><a href="#portfolio" data-translate="portfolio" data-section="portfolio">Portfolio</a></li>
+                <li><a href="#cennik" data-translate="pricing" data-section="cennik">Cennik</a></li>
+                <li><a href="#kontakt" data-translate="contact" data-section="kontakt">Kontakt</a></li>
+              </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="main-wrapper">
+            <!-- Sekcja Hero (bez zmian) -->
+            <section id="hero" class="section-container fade-in">
+                <div class="video-container"><video autoplay muted loop playsinline id="heroVideo" class="hero-video"><source src="carbon-video.mp4" type="video/mp4">Twoja przeglądarka nie obsługuje wideo HTML5.</video></div>
+                <div class="container hero-content-container">
+                    <img src="logo.png" alt="Logo firmy Damian Kokott" class="hero-logo" data-translate-alt="logoAlt">
+                    <h1 data-translate="heroTitle">Twoja Wizja, Nasze Wykonanie</h1>
+                    <p data-translate="heroSubtitle">Profesjonalne usługi car wrappingu i detailingu</p>
+                    <a href="#o-mnie" class="btn hero-cta-btn" data-translate="learnMore">Poznaj mnie</a>
+                </div>
+            </section>
+
+            <!-- Sekcja O Mnie (bez zmian) -->
+            <section id="o-mnie" class="section-container fade-in">
+                <div class="container">
+                    <h2 data-translate="about">O Mnie</h2>
+                    <div class="o-mnie-content">
+                        <div class="o-mnie-text">
+                            <p data-translate="aboutText1">Cześć! Nazywam się Damian Kokott i specjalizuję się w car wrappingu oraz detailingu. Od lat pasjonuję się motoryzacją i dbaniem o wygląd pojazdów, dlatego postanowiłem poświęcić się temu zawodowo.</p>
+                            <p data-translate="aboutText2">Posiadam certyfikat 'Wrapping Master' od renomowanej firmy Wrapster, a moje doświadczenie obejmuje oklejanie aut folią wylewaną, dechroming, zabezpieczenie lakieru oraz tworzenie reklam na pojazdach. Oprócz tego mam doświadczenie w lakierowaniu samochodów, motocykli, ciężarówek i pojazdów militarnych.</p>
+                            <p data-translate="aboutText3">Moim celem jest dostarczanie usług na najwyższym poziomie, dlatego cały czas rozwijam swoje umiejętności i inwestuję w najlepsze materiały oraz sprzęt. W przyszłości planuję poszerzyć ofertę o folie ochronne PPF, aby jeszcze lepiej zabezpieczać samochody moich klientów.</p>
+                            <p data-translate="aboutText4">Jeśli szukasz kogoś, kto profesjonalnie zadba o wygląd Twojego auta – dobrze trafiłeś! Zapraszam do kontaktu i współpracy.</p>
+                        </div>
+                        <div class="o-mnie-img"><img src="damian-kokott.jpg" alt="Damian Kokott - specjalista car wrappingu" loading="lazy" data-translate-alt="aboutImageAlt"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja Usługi (bez zmian) -->
+            <section id="uslugi" class="section-container fade-in">
+                <div class="container"><h2 data-translate="services">Usługi</h2></div>
+                <div id="service-paint-correction" class="service-item">
+                    <div class="container service-item-container">
+                        <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                        <div class="service-content">
+                            <h3 data-translate="svcPaintCorrectionTitle">Korekta lakieru</h3>
+                            <p data-translate="svcPaintCorrectionDesc1">Twój lakier stracił blask? Na karoserii widać rysy, hologramy i zmatowienia? To naturalne, ale dobra wiadomość jest taka, że możemy to naprawić! Korekta lakieru to proces wieloetapowego polerowania, który usuwa defekty powierzchniowe i przywraca lakierowi efekt salonowej głębi. Każde auto traktujemy indywidualnie, dopasowując metodę do stanu lakieru.</p>
+                            <h4 data-translate="svcPaintCorrectionTypesTitle">Rodzaje korekty lakieru:</h4><ul><li><strong data-translate="svcPaintCorrectionType1Title">✨ One-step (jednoetapowa korekta)</strong> – <span data-translate="svcPaintCorrectionType1Desc">szybkie odświeżenie lakieru, usunięcie drobnych rys i przywrócenie blasku. Idealne rozwiązanie dla aut z lekkimi śladami użytkowania.</span></li><li><strong data-translate="svcPaintCorrectionType2Title">⚡ Two-step (dwuetapowa korekta)</strong> – <span data-translate="svcPaintCorrectionType2Desc">usuwamy średnie rysy i oksydację, przywracając głębię koloru. Świetne dla aut, które przez lata zbierały ślady eksploatacji.</span></li><li><strong data-translate="svcPaintCorrectionType3Title">⭐ Three-step (trzyetapowa korekta)</strong> – <span data-translate="svcPaintCorrectionType3Desc">maksymalna precyzja! Pełna regeneracja lakieru, eliminacja głębokich rys, hologramów i śladów po myjniach automatycznych. Efekt? Lustro na karoserii!</span></li></ul>
+                            <div class="service-notes"><strong data-translate="funFactTitle">Ciekawostka:</strong> <span data-translate="svcPaintCorrectionFact">Wiesz, że lakier samochodowy ma grubość porównywalną do kartki papieru? Podczas korekty usuwamy jedynie cienką warstwę (zaledwie kilka mikronów), co sprawia, że proces jest bezpieczny dla powłoki. A dobrze zabezpieczony lakier może wyglądać perfekcyjnie przez lata!</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="service-full-wrap" class="service-item">
+                    <div class="container service-item-container">
+                        <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                        <div class="service-content">
+                            <h3 data-translate="svcFullWrapTitle">Full Wrap</h3>
+                            <p data-translate="svcFullWrapDesc1">Masz dość fabrycznego koloru swojego auta? A może chcesz, by Twój samochód wyróżniał się na drodze? Full Wrap to najlepszy sposób na zmianę wyglądu pojazdu bez konieczności lakierowania! Dzięki nowoczesnym foliom możesz nadać swojej maszynie dowolny styl – mat, połysk, satyna, karbon, metalik, a nawet efekt kameleona!</p><p data-translate="svcFullWrapDesc2">Folia nie tylko odmienia wygląd auta, ale też chroni lakier przed drobnymi zarysowaniami, promieniami UV i chemią drogową. To świetne rozwiązanie, jeśli chcesz zabezpieczyć oryginalny lakier, a jednocześnie mieć możliwość łatwego powrotu do poprzedniego wyglądu.</p>
+                            <h4 data-translate="whyWorthItTitle">Dlaczego warto?</h4><ul><li data-translate="svcFullWrapBenefit1">✅ Ogromny wybór kolorów i wykończeń</li><li data-translate="svcFullWrapBenefit2">✅ Ochrona lakieru przed kamieniami i rysami</li><li data-translate="svcFullWrapBenefit3">✅ Możliwość powrotu do oryginalnego lakieru bez uszkodzeń</li><li data-translate="svcFullWrapBenefit4">✅ Trwałość nawet do 7 lat przy odpowiedniej pielęgnacji</li></ul>
+                            <div class="service-notes"><strong data-translate="funFactTitle">Ciekawostka:</strong> <span data-translate="svcFullWrapFact">Profesjonalnie nałożona folia wygląda jak lakier! Jeśli ktoś nie wie, że auto było oklejane, może tego nawet nie zauważyć – różnicę czuć tylko pod palcami.</span></div>
+                        </div>
+                    </div>
+                </div>
+                 <div id="service-dechroming" class="service-item">
+                    <div class="container service-item-container">
+                        <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                        <div class="service-content">
+                           <h3 data-translate="svcDechromingTitle">Dechroming</h3>
+                           <p data-translate="svcDechromingDesc1">Chromowane akcenty, które kiedyś były na topie, dziś mogą wydawać się przestarzałe i przytłaczające. Dechroming to usługa, która pozwala pozbyć się niechcianych chromowanych elementów, takich jak listwy wokół szyb, grille czy wykończenia lusterek. Zamiast chromu, na ich miejscu możemy zastosować matową, połyskową lub satynową folię, która nada Twojemu autu bardziej nowoczesny, sportowy wygląd.</p><p data-translate="svcDechromingDesc2">Dzięki dechromingowi Twój samochód zyska elegancki, subtelny charakter – świetnie komponuje się z ciemniejszymi kolorami aut, ale wygląda równie dobrze na jasnych karoseriach.</p>
+                            <h4 data-translate="whyWorthItTitle">Dlaczego warto?</h4><ul><li data-translate="svcDechromingBenefit1">✅ Natychmiastowa zmiana wyglądu</li><li data-translate="svcDechromingBenefit2">✅ Wysoka jakość folii zapewnia długotrwały efekt</li><li data-translate="svcDechromingBenefit3">✅ Folia nie tylko zmienia kolor, ale i chroni elementy przed uszkodzeniami</li></ul>
+                            <div class="service-notes"><strong data-translate="funFactTitle">Ciekawostka:</strong> <span data-translate="svcDechromingFact">Dechroming to nie tylko kwestia estetyki. Zmiana chromowanych elementów na folię może sprawić, że Twoje auto będzie wyglądać na droższego i bardziej dopracowanego – minimalizm w designie jest w modzie!</span></div>
+                        </div>
+                    </div>
+               </div>
+               <div id="service-stripes-roof" class="service-item">
+                     <div class="container service-item-container">
+                         <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                         <div class="service-content">
+                             <h3 data-translate="svcStripesRoofTitle">Pasy / Oklejanie dachów</h3>
+                             <p data-translate="svcStripesRoofDesc1">Pasy sportowe to świetny sposób na wyróżnienie się na drodze! Możemy zastosować je na całym samochodzie lub tylko na wybranych częściach – na przykład na dachu, maskach, a nawet zderzakach. W połączeniu z odpowiednią folią, pasy mogą podkreślić dynamiczny wygląd Twojego auta i nadać mu sportowy charakter.</p><p data-translate="svcStripesRoofDesc2">Oklejanie dachów to także popularna usługa. Często wybierana w połączeniu z pasami sportowymi lub w ramach częściowego oklejenia pojazdu – zmienia wygląd auta bez konieczności wykonywania kosztownego malowania. Możesz wybrać kontrastowe kolory lub subtelne wykończenia, które idealnie pasują do reszty pojazdu.</p>
+                             <h4 data-translate="whyWorthItTitle">Dlaczego warto?</h4><ul><li data-translate="svcStripesRoofBenefit1">✅ Sportowy wygląd i indywidualny styl</li><li data-translate="svcStripesRoofBenefit2">✅ Łatwość zmiany designu bez ingerencji w lakier</li><li data-translate="svcStripesRoofBenefit3">✅ Wybór między matową, połyskową lub satynową folią</li></ul>
+                              <div class="service-notes"><strong data-translate="funFactTitle">Ciekawostka:</strong> <span data-translate="svcStripesRoofFact">Wiele luksusowych samochodów posiada dachy w kontrastowym kolorze, aby nadać im bardziej agresywnego, wyścigowego wyglądu. To hit w motoryzacyjnych trendach!</span></div>
+                         </div>
+                     </div>
+                </div>
+                <div id="service-interior-detailing" class="service-item">
+                      <div class="container service-item-container">
+                          <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                          <div class="service-content">
+                              <h3 data-translate="svcIntDetailingTitle">Detailing wnętrza</h3>
+                              <p data-translate="svcIntDetailingDesc1">Detailing wnętrza to kompleksowe czyszczenie i pielęgnacja wszystkich elementów kabiny pojazdu. Proces obejmuje dokładne odkurzanie, pranie tapicerki materiałowej, czyszczenie i konserwację skóry, a także usuwanie zabrudzeń z plastików, przycisków i innych detali. Wykorzystujemy specjalistyczne środki, które nie tylko usuwają brud, ale również zabezpieczają powierzchnie przed szybkim ponownym zabrudzeniem.</p> <p data-translate="svcIntDetailingOfferTitle">W ramach usługi oferujemy:</p>
+                              <ul><li data-translate="svcIntDetailingOffer1">✔ Czyszczenie plastików, gum i elementów dekoracyjnych</li><li data-translate="svcIntDetailingOffer2">✔ Pranie tapicerki materiałowej lub czyszczenie i konserwację skóry</li><li data-translate="svcIntDetailingOffer3">✔ Czyszczenie podsufitki (w miarę możliwości)</li><li data-translate="svcIntDetailingOffer4">✔ Mycie szyb od wewnątrz</li><li data-translate="svcIntDetailingOffer5">✔ Dokładne czyszczenie detali, takich jak kratki nawiewów, przyciski i schowki</li></ul>
+                              <p data-translate="svcIntDetailingEffect">Efekt? Wnętrze pojazdu odzyskuje świeżość, jest wolne od kurzu, plam i zabrudzeń, a każda powierzchnia wygląda jak nowa.</p>
+                              <div class="service-notes"><h4 data-translate="svcIntDetailingFactsTitle">Ciekawostki o detailingu wnętrza</h4><ul><li data-translate="svcIntDetailingFact1">🔹 Nie tylko czystość...</li><li data-translate="svcIntDetailingFact2">🔹 Czy wiesz, że…? Kierownica...</li><li data-translate="svcIntDetailingFact3">🔹 Skóra w aucie starzeje się...</li><li data-translate="svcIntDetailingFact4">🔹 Kurz i brud w nawiewach...</li></ul></div>
+                          </div>
+                      </div>
+                </div>
+                 <div id="service-headlight-restoration" class="service-item">
+                       <div class="container service-item-container">
+                           <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                           <div class="service-content">
+                               <h3 data-translate="svcHeadlightRestoTitle">Regeneracja kloszy</h3>
+                               <p data-translate="svcHeadlightRestoDesc1">Reflektory z czasem matowieją i żółkną, co nie tylko psuje wygląd samochodu, ale też ogranicza skuteczność oświetlenia i pogarsza bezpieczeństwo jazdy nocą. Regeneracja kloszy reflektorów to proces, który przywraca im pierwotną przejrzystość i poprawia efektywność świateł.</p><p data-translate="svcHeadlightRestoOfferTitle">W ramach usługi wykonujemy:</p>
+                               <ul><li data-translate="svcHeadlightRestoOffer1">✔ Usunięcie rys, zmatowień i przebarwień</li><li data-translate="svcHeadlightRestoOffer2">✔ Wieloetapowe polerowanie kloszy</li><li data-translate="svcHeadlightRestoOffer3">✔ Zabezpieczenie reflektorów specjalnym preparatem lub powłoką ochronną</li></ul>
+                               <p data-translate="svcHeadlightRestoEffect">Efekt? Reflektory wyglądają jak nowe, a ich światło jest jaśniejsze i bardziej efektywne, co poprawia widoczność na drodze i estetykę auta.</p>
+                           </div>
+                       </div>
+                 </div>
+                 <div id="service-lamp-tinting" class="service-item">
+                        <div class="container service-item-container">
+                            <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                            <div class="service-content">
+                                <h3 data-translate="svcLampTintingTitle">Przyciemnianie lamp</h3>
+                                <p data-translate="svcLampTintingDesc1">Przyciemnianie lamp to świetny sposób na nadanie samochodowi agresywnego, sportowego wyglądu. Oprócz walorów estetycznych, folia do przyciemniania lamp może również chronić reflektory przed drobnymi uszkodzeniami mechanicznymi.</p><p data-translate="svcLampTintingDesc2">Oferujemy przyciemnianie lamp przy użyciu wysokiej jakości folii o różnych poziomach przyciemnienia, dostosowanych do preferencji klienta i zgodnych z przepisami drogowymi.</p>
+                                <p data-translate="svcLampTintingOfferTitle">W ramach usługi wykonujemy:</p><ul><li data-translate="svcLampTintingOffer1">✔ Profesjonalne oklejenie lamp folią przyciemniającą</li><li data-translate="svcLampTintingOffer2">✔ Dopasowanie stopnia przyciemnienia do stylu auta i przepisów</li><li data-translate="svcLampTintingOffer3">✔ Precyzyjne wykończenie bez widocznych krawędzi i pęcherzyków powietrza</li></ul>
+                                <p data-translate="svcLampTintingEffect">Efekt? Nowoczesny, stylowy wygląd samochodu i dodatkowa ochrona reflektorów przed kamieniami oraz drobnymi uszkodzeniami.</p>
+                                <div class="service-notes"><h4 data-translate="svcLampTintingFactsTitle">Ciekawostki o reflektorach i przyciemnianiu lamp</h4><ul><li data-translate="svcLampTintingFact1">🔹 Czy wiesz, że...?</li><li data-translate="svcLampTintingFact2">🔹 Reflektory a przegląd...</li><li data-translate="svcLampTintingFact3">🔹 Przyciemnianie lamp nie zawsze...</li></ul></div>
+                            </div>
+                        </div>
+                 </div>
+                <div id="service-maxton-fitting" class="service-item">
+                        <div class="container service-item-container">
+                            <div class="service-slider-wrapper"><div class="service-slider-images"></div><button class="slider-nav prev" aria-label="Poprzednie zdjęcie" data-translate-aria-label="prevPhoto"><i class="fas fa-chevron-left"></i></button><button class="slider-nav next" aria-label="Następne zdjęcie" data-translate-aria-label="nextPhoto"><i class="fas fa-chevron-right"></i></button><div class="service-slider-dots"></div></div>
+                            <div class="service-content">
+                               <h3 data-translate="svcMaxtonFittingTitle">Montaż dokładek Maxton Design</h3>
+                               <p data-translate="svcMaxtonFittingDesc1">Dokładki Maxton Design to doskonały sposób na podkreślenie sportowego charakteru auta. Dzięki nim samochód zyskuje agresywniejszy wygląd, lepszą aerodynamikę oraz indywidualny styl. Oferujemy profesjonalny montaż dokładek, takich jak splittery, progi, dyfuzory czy spoilery, zapewniając precyzyjne dopasowanie i estetyczne wykończenie.</p><p data-translate="svcMaxtonFittingOfferTitle">W ramach usługi wykonujemy:</p>
+                               <ul><li data-translate="svcMaxtonFittingOffer1">✔ Dopasowanie dokładek do konkretnego modelu samochodu</li><li data-translate="svcMaxtonFittingOffer2">✔ Profesjonalny montaż z dbałością o detale</li><li data-translate="svcMaxtonFittingOffer3">✔ Opcjonalne zabezpieczenie elementów folią lub powłoką ochronną</li></ul>
+                               <p data-translate="svcMaxtonFittingEffect">Efekt? Auto nabiera bardziej dynamicznego wyglądu, a dodatkowe elementy poprawiają jego aerodynamikę i ochronę przed uszkodzeniami.</p>
+                               <div class="service-notes"><h4 data-translate="svcMaxtonFittingFactsTitle">Ciekawostki o dokładkach Maxton Design</h4><ul><li data-translate="svcMaxtonFittingFact1">🔹 Czy wiesz, że...?</li><li data-translate="svcMaxtonFittingFact2">🔹 Nie tylko tuning wizualny...</li><li data-translate="svcMaxtonFittingFact3">🔹 Materiały mają znaczenie...</li><li data-translate="svcMaxtonFittingFact4">🔹 Personalizacja to klucz...</li></ul></div>
+                            </div>
+                        </div>
+                 </div>
+                 <div id="service-ppf" class="service-item future-service">
+                       <div class="container service-item-container">
+                           <div class="service-content">
+                               <h3 data-translate="servicePpfTitle">Folie Ochronne PPF <span class="soon-badge-inline" data-translate="soon">(Wkrótce)</span></h3>
+                               <p data-translate="servicePpfDesc">Planujemy wprowadzenie usług aplikacji bezbarwnych folii ochronnych (Paint Protection Film) na elementy karoserii najbardziej narażone na uszkodzenia (zderzak, maska, lusterka, progi).</p>
+                           </div>
+                       </div>
+                  </div>
+            </section>
+
+            <!-- Portfolio (bez zmian) -->
+             <section id="portfolio" class="section-container fade-in">
+                 <div class="container">
+                     <h2 data-translate="portfolio">Portfolio</h2>
+                     <div class="portfolio-grid"><!-- JS doda zdjęcia --></div>
+                     <button class="btn btn-show-all" data-translate="showAllPhotos">Pokaż wszystkie zdjęcia</button>
+                 </div>
+             </section>
+
+            <!-- Cennik (Ukryty domyślnie przez JS) -->
+            <section id="cennik" class="section-container fade-in" style="display: none;"> <!-- Dodano style="display: none;" z powrotem, JS zarządza widocznością -->
+                 <div class="container">
+                     <h2 data-translate="pricingTitleFull">Cennik usług – D.Kokott Your Vision Our Execution</h2>
+                     <div class="pricing-category">
+                         <h3 data-translate="priceCatWrapping">Wrapping (Oklejanie Pojazdów)</h3>
+                         <table>
+                             <tbody> <!-- Dodano tbody dla poprawności HTML tabeli -->
+                             <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatColorChange">Zmiana koloru pojazdu</td><td></td><td></td></tr>
+                             <tr><td data-label="priceService" data-translate="priceSegmentCar">Samochód osobowy</td><td></td><td data-label="priceStartingFrom" data-price="2000">od 2 000 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceSegmentSuvVan">SUV / Van</td><td></td><td data-label="priceStartingFrom" data-price="2500">od 2 500 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceSegmentMotorcycle">Motocykl</td><td></td><td data-label="priceStartingFrom" data-price="1000">od 1 000 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceSegmentTruck">Ciężarówka / Naczepa</td><td></td><td data-label="priceStartingFrom" data-translate="priceIndividual">wycena indywidualna</td></tr>
+
+                             <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatElements">Oklejanie poszczególnych elementów</td><td></td><td></td></tr>
+                             <tr><td data-label="priceService" data-translate="priceElementRoof">Dach</td><td></td><td data-label="priceStartingFrom" data-price="500">od 500 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceElementMirrors">Lusterka</td><td></td><td data-label="priceStartingFrom" data-price="200">od 200 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceElementStripes">Pasy dekoracyjne</td><td></td><td data-label="priceStartingFrom" data-price="300">od 300 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="svcDechromingTitle">Dechroming (usuwanie chromu)</td><td></td><td data-label="priceStartingFrom" data-price="600">od 600 €</td></tr>
+
+                             <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatAdvertising">Oklejanie reklamowe</td><td></td><td></td></tr>
+                             <tr><td data-label="priceService" data-translate="priceAdDoors">Reklama na drzwiach</td><td></td><td data-label="priceStartingFrom" data-price="250">od 250 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceAdHalf">Oklejanie połowy pojazdu</td><td></td><td data-label="priceStartingFrom" data-price="800">od 800 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceAdFull">Pełna reklama na pojeździe</td><td></td><td data-label="priceStartingFrom" data-price="1500">od 1 500 €</td></tr>
+
+                             <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatTinting">Przyciemnianie elementów</td><td></td><td></td></tr>
+                             <tr><td data-label="priceService" data-translate="svcLampTintingTitle">Przyciemnianie lamp</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                             <tr><td data-label="priceService" data-translate="priceTintingWindows">Przyciemnianie szyb <span class="soon-badge-inline" data-translate="soon">(wkrótce)</span></td><td></td><td data-label="priceStartingFrom" data-translate="soon">wkrótce</td></tr>
+                            </tbody>
+                         </table>
+                     </div>
+
+                     <hr class="pricing-divider">
+
+                     <div class="pricing-category">
+                         <h3 data-translate="priceCatDetailing">Detailing (Pielęgnacja i Korekta Lakieru)</h3>
+                         <table>
+                            <tbody>
+                               <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatWash">Mycie detailingowe</td><td></td><td></td></tr>
+                               <tr><td data-label="priceService" data-translate="priceWashBasic">Podstawowe mycie detailingowe</td><td></td><td data-label="priceStartingFrom" data-price="100">od 100 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceWashDecon">Mycie + dekontaminacja lakieru</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr class="category-title"><td data-label="priceService" data-translate="svcPaintCorrectionTitle">Korekta lakieru</td><td></td><td></td></tr>
+                               <tr><td data-label="priceService" data-translate="svcPaintCorrectionType1Title">One-step (jednoetapowa)</td><td></td><td data-label="priceStartingFrom" data-price="300">od 300 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="svcPaintCorrectionType2Title">Two-step (dwuetapowa)</td><td></td><td data-label="priceStartingFrom" data-price="500">od 500 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="svcPaintCorrectionType3Title">Three-step (trzyetapowa)</td><td></td><td data-label="priceStartingFrom" data-price="700">od 700 €</td></tr>
+                               <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatProtection">Ochrona lakieru</td><td></td><td></td></tr>
+                               <tr><td data-label="priceService" data-translate="priceProtWax">Wosk syntetyczny</td><td></td><td data-label="priceStartingFrom" data-price="100">od 100 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceProtCeramic1y">Powłoka ceramiczna 1-roczna</td><td></td><td data-label="priceStartingFrom" data-price="500">od 500 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceProtCeramic3y">Powłoka ceramiczna 3-letnia</td><td></td><td data-label="priceStartingFrom" data-price="800">od 800 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceProtCeramic5y">Powłoka ceramiczna 5-letnia</td><td></td><td data-label="priceStartingFrom" data-price="1000">od 1 000 €</td></tr>
+                               <tr class="category-title"><td data-label="priceService" data-translate="svcIntDetailingTitle">Detailing wnętrza</td><td></td><td></td></tr>
+                               <tr><td data-label="priceService" data-translate="priceIntCleaning">Kompleksowe czyszczenie wnętrza</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceIntUpholstery">Pranie tapicerki materiałowej</td><td></td><td data-label="priceStartingFrom" data-price="100">od 100 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceIntLeather">Czyszczenie i impregnacja skóry</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceIntProtection">Ochrona tapicerki (impregnacja)</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr class="category-title"><td data-label="priceService" data-translate="priceSubCatRenovation">Renowacja elementów</td><td></td><td></td></tr>
+                               <tr><td data-label="priceService" data-translate="svcHeadlightRestoTitle">Renowacja reflektorów</td><td></td><td data-label="priceStartingFrom" data-price="80">od 80 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceRenoWindows">Polerowanie i zabezpieczenie szyb</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceRenoPlastics">Ochrona plastików zewnętrznych</td><td></td><td data-label="priceStartingFrom" data-price="100">od 100 €</td></tr>
+                           </tbody>
+                        </table>
+                    </div>
+
+                   <hr class="pricing-divider">
+
+                    <div class="pricing-category">
+                         <h3 data-translate="priceCatFitting">Montaż dodatków (np. Maxton Design)</h3>
+                         <table>
+                             <tbody>
+                               <tr><td data-label="priceService" data-translate="svcMaxtonFittingTitle">Montaż dokładek Maxton Design</td><td></td><td data-label="priceStartingFrom" data-price="200">od 200 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceFitSpoilers">Montaż spoilerów</td><td></td><td data-label="priceStartingFrom" data-price="150">od 150 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceFitDiffusers">Montaż dyfuzorów</td><td></td><td data-label="priceStartingFrom" data-price="200">od 200 €</td></tr>
+                               <tr><td data-label="priceService" data-translate="priceFitSills">Montaż nakładek progowych</td><td></td><td data-label="priceStartingFrom" data-price="180">od 180 €</td></tr>
+                            </tbody>
+                        </table>
+                     </div>
+                    <p class="pricing-note" data-translate="priceNoteFull">Ceny są orientacyjne...</p>
+                 </div>
+            </section>
+
+           <!-- Sekcja Kontakt (zaktualizowane klucze data-translate dla telefonów) -->
+           <section id="kontakt" class="section-container fade-in">
+                <div class="container">
+                    <h2 data-translate="contact">Kontakt</h2>
+                    <div class="kontakt-content-wrapper">
+                        <div class="kontakt-info-map-wrapper">
+                            <h3 data-translate="contactDetails">Dane Kontaktowe</h3>
+                            <div class="kontakt-info">
+                                <p><i class="fas fa-phone"></i> <strong data-translate="phoneNL_new">Numer NL 1:</strong> <span><a href="tel:+31684993502">06 84 99 35 02</a></span></p>
+                                <p><i class="fab fa-whatsapp"></i> <strong data-translate="phoneNL_whatsapp">Numer NL 2 (WhatsApp):</strong> <span><a href="https://wa.me/31686291234" target="_blank" rel="noopener noreferrer">06 86 29 12 34</a></span></p> <!-- Poprawiony link WhatsApp -->
+                                <p><i class="fas fa-phone-alt"></i> <strong data-translate="phonePL">Numer PL:</strong> <span><a href="tel:+48509676961">+48 509 676 961</a></span></p>
+                                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <span><a href="mailto:carstyled.k@gmail.com">carstyled.k@gmail.com</a></span></p>
+                                <p class="kontakt-address"><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adres:</strong>
+                                <span><a href="https://www.google.com/maps/search/?api=1&query=Dragonder+34B,+Valkenswaard" target="_blank" rel="noopener noreferrer" title="Zobacz na mapie">Valkenswaard, Dragonder 34B</a></span></p>
+                            </div>
+                            <h3 data-translate="location">Lokalizacja</h3>
+                            <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2496.254816135701!2d5.458519676968464!3d51.34848192102295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6de7e0bd8c041%3A0x8dfa50b7c7613c0e!2sDragonder%2034b%2C%205554%20GM%20Valkenswaard%2C%20Netherlands!5e0!3m2!1sen!2spl!4v1709912493893!5m2!1sen!2spl" frameborder="0" loading="lazy" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" title="Mapa lokalizacji firmy"></iframe></div>
+                        </div>
+                        <div class="kontakt-form-wrapper">
+                            <h3 data-translate="contactForm">Formularz Kontaktowy</h3>
+                            <form id="contactForm" method="POST" novalidate>
+                                <div class="form-group"><label for="name" data-translate="formName">Imię i Nazwisko</label><input type="text" id="name" name="name" required data-translate-placeholder="formNamePlaceholder"></div>
+                                <div class="form-group"><label for="email" data-translate="formEmail">Email</label><input type="email" id="email" name="email" required data-translate-placeholder="formEmailPlaceholder"></div>
+                                <div class="form-group"><label for="phone" data-translate="formPhone">Telefon (opcjonalnie)</label><input type="tel" id="phone" name="phone" data-translate-placeholder="formPhonePlaceholder"></div>
+                                <div class="form-group"><label for="message" data-translate="formMessage">Wiadomość</label><textarea id="message" name="message" required data-translate-placeholder="formMessagePlaceholder"></textarea></div>
+                                <div class="form-group form-consent"><input type="checkbox" id="consent" name="consent" required><label for="consent" data-translate="formConsent">Wyrażam zgodę...</label></div>
+                                <button type="submit" class="btn" data-translate="formSend">Wyślij</button>
+                                <p id="formStatus" role="status" aria-live="polite"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+           </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>© <span id="currentYear"></span> Damian Kokott. <span data-translate="footerRights">Wszystkie prawa zastrzeżone.</span></p></div></footer>
+
+    <!-- Modale (bez zmian) -->
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
+         <span class="close-modal-btn" role="button" tabindex="0" aria-label="Zamknij">×</span>
+         <button class="prev" aria-label="Poprzednie zdjęcie"><i class="fas fa-chevron-left"></i></button>
+         <button class="next" aria-label="Następne zdjęcie"><i class="fas fa-chevron-right"></i></button>
+         <h2 id="modalTitle" class="visually-hidden" data-translate="enlargedPhotoTitle">Powiększone zdjęcie</h2>
+         <div class="modal-content">
+              <img id="modalImage" src="" alt="" loading="lazy" class="modal-img">
+         </div>
+    </div>
+
+    <div id="allPhotosModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="allPhotosTitle" style="display: none;">
+         <span class="close-modal-btn" role="button" tabindex="0" aria-label="Zamknij">×</span>
+         <div class="modal-content">
+              <h2 id="allPhotosTitle" data-translate="gallery">Galeria</h2>
+              <div id="allPhotosGrid"><!-- JS Wypełni zdjęciami --></div>
+         </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
